@@ -1,0 +1,34 @@
+{
+    "name": "@shuinfo/wepack-plugin-deletesourcemap",
+    "version": "0.0.0",
+    "description": "> TODO: description",
+    "author": "gzh <18255106634@163.com>",
+    "homepage": "",
+    "license": "ISC",
+    "main": "lib/index.ts",
+    "typings": "types/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "peerDependencies": {
+        "webpack": "4.x.x"
+    },
+    "publishConfig": {
+        "registry": "https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/"
+    },
+    "scripts": {
+        "build": "npx tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.2",
+        "@typescript-eslint/eslint-plugin": "^5.8.0",
+        "@typescript-eslint/parser": "^5.8.0",
+        "eslint": "^8.5.0",
+        "eslint-config-prettier": "^8.3.0",
+        "typescript": "^4.5.4",
+        "webpack": "^5.65.0"
+    },
+    "dependencies": {
+        "husky": "^7.0.4"
+    }
+}
