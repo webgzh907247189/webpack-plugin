@@ -8,7 +8,9 @@
     "main": "lib/index.ts",
     "typings": "types/index.d.ts",
     "files": [
-        "lib"
+        "lib",
+        "dist",
+        "types"
     ],
     "peerDependencies": {
         "webpack": ">=4.0.0"
