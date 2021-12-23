@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import { Compiler, Stats } from 'webpack';
+
 export default class DeleteSourcemap {
     apply(compile: Compiler) {
         compile.hooks.done.tapAsync('SentryPlugin', (stats: Stats, cb: () => void) => {
