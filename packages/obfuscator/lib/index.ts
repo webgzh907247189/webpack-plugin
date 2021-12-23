@@ -1,8 +1,9 @@
-import { Compiler, sources } from 'webpack';
+import { Compilation, Compiler, sources } from 'webpack';
 import JavaScriptObfuscator, { ObfuscatorOptions } from 'javascript-obfuscator';
 import multimatch from 'multimatch';
 import { RawSource } from 'webpack-sources';
 
+type CompilationAssets = Pick<Compilation, 'assets'>['assets'];
 export default class WebpackObfuscator {
     // 混淆多个文件，请使用此选项。此选项有助于避免这些文件的全局标识符之间的冲突。每个文件的前缀应该不同。
     private static readonly baseIdentifiersPrefix = 'a';
@@ -45,8 +46,8 @@ export default class WebpackObfuscator {
                     // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     const { obfuscatedSource, obfuscationSourceMap } = this.obfuscate(inputSource as string, fileName, identifiersPrefixCounter);
 
-                    const assets = compilation.assets;
-                    (assets as any)[fileName] = new RawSource(obfuscatedSource);
+                    const assets: CompilationAssets = compilation.assets;
+                    assets[fileName] = (new RawSource(obfuscatedSource) as any as sources.RawSource);
                     identifiersPrefixCounter++;
                 });
             });
