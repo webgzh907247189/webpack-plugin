@@ -1,0 +1,21 @@
+{
+    "name": "root",
+    "private": true,
+    "devDependencies": {
+        "lerna": "^4.0.0"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "lint-fix": "eslint . --ext .ts --fix",
+        "prettier": "npx prettier --write .",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "src/**/*.{js,ts,tsx,vue}": [
+            "npm run prettier",
+            "npm run lint-fix"
+        ]
+    }
+}
