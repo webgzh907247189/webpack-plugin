@@ -1,6 +1,6 @@
 {
     "name": "@shuinfo/wepack-plugin-obfuscator",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "> TODO: description",
     "author": "gzh <18255106634@163.com>",
     "homepage": "",
@@ -37,5 +37,6 @@
         "eslint-config-prettier": "^8.3.0",
         "typescript": "^4.5.4",
         "webpack": "^5.65.0"
-    }
+    },
+    "gitHead": "fe53d5f5f352a8f99e9bbe10d1cf418f6be9a820"
 }
