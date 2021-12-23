@@ -14,7 +14,8 @@
         "webpack": ">=4.0.0"
     },
     "publishConfig": {
-        "registry": "https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/"
+        "registry": "https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/",
+        "access": "public"
     },
     "scripts": {
         "build": "npx tsc"
