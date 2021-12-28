@@ -7,7 +7,7 @@
         "sourceMap": true,
         "lib": ["ES6"],
         "types": ["node"],
-        "typeRoots": ["../node_modules/@types"],
+        // "typeRoots": ["../node_modules/@types"],
         "esModuleInterop": true
     },
     "exclude": ["node_modules", "./packages/deleteSourcemap/tsconfig.json", "./packages/obfuscator/tsconfig.json"]
