@@ -1,6 +1,6 @@
 {
     "name": "@shuinfo/wepack-plugin-deletesourcemap",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "> TODO: description",
     "author": "gzh <18255106634@163.com>",
     "homepage": "",
@@ -34,5 +34,5 @@
     "dependencies": {
         "husky": "^7.0.4"
     },
-    "gitHead": "fe53d5f5f352a8f99e9bbe10d1cf418f6be9a820"
+    "gitHead": "0b828286785b2879aac831653cc358b93d1a9e3d"
 }
