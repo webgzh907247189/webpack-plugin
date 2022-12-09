@@ -1,13 +1,13 @@
-## wepack-plugin-deletesourcemap
+## webpack-plugin-deletesourcemap
 
 ### Installation  
-`npm i wepack-plugin-deletesourcemap`
+`npm i webpack-plugin-deletesourcemap`
 
 
 ## Usage
 
 ```javascript
-const DeleteSourcemap = require('wepack-plugin-deletesourcemap');
+const DeleteSourcemap = require('webpack-plugin-deletesourcemap');
 
 module.exports = {
     ...
