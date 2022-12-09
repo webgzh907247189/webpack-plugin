@@ -11,5 +11,4 @@ plugins: [
     ...
     new DeleteSourcemap(),
 ]
-// TODO: DEMONSTRATE API
 ```
