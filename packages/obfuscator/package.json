@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-obfuscator",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "> TODO: description",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/obfuscator/README.md",
