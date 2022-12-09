@@ -5,7 +5,7 @@ import { RawSource } from 'webpack-sources';
 
 
 type CompilationAssets = Pick<Compilation, 'assets'>['assets'];
-export default class WebpackObfuscator {
+class WebpackObfuscator {
     // 混淆多个文件，请使用此选项。此选项有助于避免这些文件的全局标识符之间的冲突。每个文件的前缀应该不同。
     private static readonly baseIdentifiersPrefix = 'a';
     public obfuscatorFiles: string[] = [];
@@ -92,3 +92,5 @@ export default class WebpackObfuscator {
         };
     }
 }
+
+export = WebpackObfuscator

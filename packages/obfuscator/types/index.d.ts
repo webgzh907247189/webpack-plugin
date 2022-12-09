@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { Compiler, sources } from 'webpack';
 import { ObfuscatorOptions } from 'javascript-obfuscator';
-export default class WebpackObfuscator {
+declare class WebpackObfuscator {
     options: ObfuscatorOptions;
     private static readonly baseIdentifiersPrefix;
     obfuscatorFiles: string[];
@@ -18,3 +18,4 @@ export default class WebpackObfuscator {
         obfuscationSourceMap: string;
     };
 }
+export = WebpackObfuscator;
