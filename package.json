@@ -7,6 +7,14 @@
     "workspaces": [
         "packages/*"
     ],
+    "homepage": "https://github.com/webgzh907247189/webpack-plugin",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webgzh907247189/webpack-plugin.git"
+    },
+    "bugs": {
+        "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
+    },
     "scripts": {
         "lint-fix": "eslint . --ext .ts --fix",
         "prettier": "npx prettier --write .",

@@ -1,4 +1,7 @@
 import { Compiler } from 'webpack';
-export default class DeleteSourcemap {
-    apply(compile: Compiler): void;
-}
+declare const _default: {
+    new (): {
+        apply(compile: Compiler): void;
+    };
+};
+export = _default;
