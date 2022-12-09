@@ -4,8 +4,12 @@
 
 ## Usage
 
-```
-const deletesourcemap = require('deleteSourcemap');
+```javascript
+const DeleteSourcemap = require('deleteSourcemap');
 
+plugins: [
+    ...
+    new DeleteSourcemap(),
+]
 // TODO: DEMONSTRATE API
 ```
