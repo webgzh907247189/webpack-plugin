@@ -1,7 +1,7 @@
 {
     "name": "webpack-plugin-obfuscator",
     "version": "1.0.3",
-    "description": "> TODO: description",
+    "description": "webpack plugin obfuscator",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/obfuscator/README.md",
     "repository": {
@@ -11,6 +11,11 @@
     "bugs": {
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
+    "keywords": [
+        "webpack",
+        "plugin",
+        "obfuscator"
+    ],
     "license": "ISC",
     "main": "lib/index.ts",
     "typings": "types/index.d.ts",
