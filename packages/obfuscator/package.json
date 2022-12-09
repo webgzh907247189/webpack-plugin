@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-obfuscator",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "> TODO: description",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/obfuscator/README.md",
@@ -41,5 +41,5 @@
         "typescript": "^4.5.4",
         "webpack": "^5.65.0"
     },
-    "gitHead": "fe53d5f5f352a8f99e9bbe10d1cf418f6be9a820"
+    "gitHead": "b62ddca2f80d8f75433b1ad681b422efe0da13a6"
 }

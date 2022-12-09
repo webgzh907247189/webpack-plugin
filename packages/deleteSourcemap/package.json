@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-deletesourcemap",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "> TODO: description",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/deleteSourcemap/README.md",
@@ -37,5 +37,5 @@
         "webpack": "^5.65.0",
         "webpack-cli": "^5.0.1"
     },
-    "gitHead": "0b828286785b2879aac831653cc358b93d1a9e3d"
+    "gitHead": "b62ddca2f80d8f75433b1ad681b422efe0da13a6"
 }
