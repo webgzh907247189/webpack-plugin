@@ -23,7 +23,7 @@ module.exports = /** @class */ (function () {
     function ErrorWithImportPackage(options) {
         if (options === void 0) { options = []; }
         this.errorWithImportPackageList = [];
-        this.errorWithImportPackageList = options;
+        this.errorWithImportPackageList = Array.isArray(options) ? options : [options];
     }
     ErrorWithImportPackage.prototype.apply = function (compiler) {
         var _this = this;
