@@ -1,0 +1,39 @@
+{
+  "name": "webpack-plugin-errorwithimportpackage",
+  "version": "1.0.0",
+  "description": "webpack plugin errorwithimportpackage",
+  "author": "gzh <18255106634@163.com>",
+  
+  "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/errorWithImportPackage#readme",
+  "license": "ISC",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "errorwithimportpackage"
+  ],
+  "main": "lib/index.ts",
+  "typings": "types/index.d.ts",
+  "files": [
+    "lib",
+    "dist",
+    "types"
+  ],
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webgzh907247189/webpack-plugin.git"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
+  }
+}
