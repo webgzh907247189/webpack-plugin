@@ -26,8 +26,10 @@ module.exports = /** @class */ (function () {
         this.errorWithImportPackageList = Array.isArray(options) ? options : [options];
     }
     ErrorWithImportPackage.prototype.apply = function (compiler) {
-        var _this = this;
         var compilerContext = compiler.context;
+        var errorWithImportPackageList = this.errorWithImportPackageList;
+        if (errorWithImportPackageList.length === 0)
+            return;
         compiler.hooks.emit.tapAsync('ErrorWithPackage', function (compilation, cb) {
             compilation.chunks.forEach(function (chunk) {
                 chunk.getModules().forEach(function (module) {
@@ -35,8 +37,8 @@ module.exports = /** @class */ (function () {
                     // 浅度的 检测引入 npm 包
                     ((_b = (_a = module === null || module === void 0 ? void 0 : module.buildInfo) === null || _a === void 0 ? void 0 : _a.fileDependencies) !== null && _b !== void 0 ? _b : []).forEach(function (filePath) {
                         var relativePath = path.posix.relative(compilerContext, filePath);
-                        // console.log(relativePath,  this.errorWithImportPackageList)
-                        _this.errorWithImportPackageList.forEach(function (itemName) {
+                        // console.log(relativePath,  errorWithImportPackageList)
+                        errorWithImportPackageList.forEach(function (itemName) {
                             var importPackageName = path.posix.join('node_modules', itemName);
                             if (relativePath.includes(importPackageName)) {
                                 console.log("\u001B[41;30m \u5F15\u5165\u975E\u6CD5npm\u5305\u4E86: errow with import ".concat(itemName, "  \u001B[0m"));
