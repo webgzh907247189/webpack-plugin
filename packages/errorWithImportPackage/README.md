@@ -1,11 +1,19 @@
-# `errorWithImportPackage`
+## webpack-plugin-errorwithimportpackage
 
-> TODO: description
+### Installation  
+`npm i webpack-plugin-errorwithimportpackage`
+
 
 ## Usage
 
-```
-const errorwithimportpackage = require('errorWithImportPackage');
+```javascript
+const ErrorWithImportPackage = require('webpack-plugin-errorwithimportpackage');
 
-// TODO: DEMONSTRATE API
+module.exports = {
+    ...
+    plugins: [
+        ...
+        new ErrorWithImportPackage(['moment']),
+    ]
+}
 ```

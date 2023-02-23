@@ -5,7 +5,7 @@ export = class ErrorWithImportPackage {
     public errorWithImportPackageList: string[] = [];
 
     constructor(options = []) {
-        this.errorWithImportPackageList = options;
+        this.errorWithImportPackageList = Array.isArray(options) ? options : [options];
     }
     apply(compiler: Compiler) {
         const compilerContext = compiler.context;
