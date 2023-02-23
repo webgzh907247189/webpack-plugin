@@ -8,7 +8,10 @@
   "keywords": [
     "webpack",
     "plugin",
-    "errorwithimportpackage"
+    "errorwithimportpackage",
+    "error",
+    "import",
+    "package"
   ],
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
