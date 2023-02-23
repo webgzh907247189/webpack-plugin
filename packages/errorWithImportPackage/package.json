@@ -1,6 +1,6 @@
 {
   "name": "webpack-plugin-errorwithimportpackage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "webpack plugin errorwithimportpackage",
   "author": "gzh <18255106634@163.com>",
   "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/errorWithImportPackage/README.md",
