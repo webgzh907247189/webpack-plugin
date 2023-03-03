@@ -13,7 +13,7 @@ export = class ErrorWithImportPackage {
 
         if (errorWithImportPackageList.length === 0) return;
 
-        compiler.hooks.emit.tapAsync('ErrorWithPackage', (compilation, cb) => {
+        compiler.hooks.emit.tapAsync('ErrorWithImportPackage', (compilation, cb) => {
             compilation.chunks.forEach((chunk) => {
                 chunk.getModules().forEach((module) => {
                     // 浅度的 检测引入 npm 包
