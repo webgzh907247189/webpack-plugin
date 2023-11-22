@@ -29,8 +29,9 @@
         "prettier": "npx prettier --write .",
         "prepare": "husky install",
         "build": "pnpm run build -r --parallel",
-        "changeset": "changeset",
-        "version-packages": "changeset version"
+        "changeset": "changeset && npm run version-packages",
+        "version-packages": "changeset version",
+        "publish": "changeset publish -r"
     },
     "lint-staged": {
         "src/**/*.{js,ts,tsx,vue}": [
