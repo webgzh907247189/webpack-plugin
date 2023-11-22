@@ -86,7 +86,7 @@ export = class ForceInsertScriptTagPlugin {
     }
 
     forceInsert(data: TypeAfterTemplateExecutionData) {
-        const { url, isInsertBody, isShift, jsDeferLoad, jsAsyncLoad } = this.options;
+        const { url, isShift, jsDeferLoad, jsAsyncLoad } = this.options;
 
         const strScript = `<script src="${url}" ${jsDeferLoad ? 'defer' : ''} ${jsAsyncLoad ? 'async' : ''} type="text/javascript"></script>`;
 

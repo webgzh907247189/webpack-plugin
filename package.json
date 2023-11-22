@@ -2,6 +2,7 @@
     "name": "root",
     "private": false,
     "devDependencies": {
+        "@changesets/cli": "^2.26.2",
         "@types/node": "^17.0.2",
         "@typescript-eslint/eslint-plugin": "^5.62.0",
         "@typescript-eslint/parser": "^5.8.0",
@@ -27,7 +28,9 @@
         "lint-fix": "eslint . --ext .ts --fix",
         "prettier": "npx prettier --write .",
         "prepare": "husky install",
-        "build": "pnpm run build -r"
+        "build": "pnpm run build -r --parallel",
+        "changeset": "changeset",
+        "version-packages": "changeset version"
     },
     "lint-staged": {
         "src/**/*.{js,ts,tsx,vue}": [
