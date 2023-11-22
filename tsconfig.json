@@ -8,7 +8,8 @@
         "lib": ["ES6"],
         "types": ["node"],
         // "typeRoots": ["../node_modules/@types"],
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "skipLibCheck": true
     },
-    "exclude": ["node_modules", "./packages/deleteSourcemap/tsconfig.json", "./packages/obfuscator/tsconfig.json", "./packages/errorWithImportPackage/tsconfig.json",]
+    "exclude": ["node_modules", "./packages/deleteSourcemap/tsconfig.json", "./packages/obfuscator/tsconfig.json", "./packages/errorWithImportPackage/tsconfig.json"]
 }

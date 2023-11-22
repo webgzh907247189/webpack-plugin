@@ -26,4 +26,4 @@ export = class DeleteSourcemap {
             cb();
         });
     }
-}
+};

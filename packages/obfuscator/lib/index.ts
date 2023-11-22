@@ -3,15 +3,23 @@ import JavaScriptObfuscator, { ObfuscatorOptions } from 'javascript-obfuscator';
 import multimatch from 'multimatch';
 import { RawSource } from 'webpack-sources';
 
-
 type CompilationAssets = Pick<Compilation, 'assets'>['assets'];
+
+type TypeSourceAndSourceMap = {
+    inputSource: string | Buffer;
+    inputSourceMap: Object;
+};
+
 class WebpackObfuscator {
     // 混淆多个文件，请使用此选项。此选项有助于避免这些文件的全局标识符之间的冲突。每个文件的前缀应该不同。
     private static readonly baseIdentifiersPrefix = 'a';
     public obfuscatorFiles: string[] = [];
     public includes: string[] = [];
 
-    constructor(public options: ObfuscatorOptions = {}, includes: string[]) {
+    constructor(
+        public options: ObfuscatorOptions = {},
+        includes: string[],
+    ) {
         this.options = options;
         this.includes = this.includes.concat(includes || []);
         this.obfuscatorFiles = [];
@@ -48,7 +56,7 @@ class WebpackObfuscator {
                     const { obfuscatedSource, obfuscationSourceMap } = this.obfuscate(inputSource as string, fileName, identifiersPrefixCounter);
 
                     const assets: CompilationAssets = compilation.assets;
-                    assets[fileName] = (new RawSource(obfuscatedSource) as any as sources.RawSource);
+                    assets[fileName] = new RawSource(obfuscatedSource) as any as sources.RawSource;
                     identifiersPrefixCounter++;
                 });
             });
@@ -64,18 +72,20 @@ class WebpackObfuscator {
     }
 
     extractSourceAndSourceMap(asset: sources.Source) {
+        let returnSource = {};
         if (asset.sourceAndMap) {
             const { source, map } = asset.sourceAndMap();
-            return {
+            returnSource = {
                 inputSource: source,
                 inputSourceMap: map,
             };
         } else {
-            return {
+            returnSource = {
                 inputSource: asset.source(),
                 inputSourceMap: asset.map(),
             };
         }
+        return returnSource as TypeSourceAndSourceMap;
     }
 
     obfuscate(javascript: string, fileName: string, identifiersPrefixCounter: number) {
@@ -93,4 +103,4 @@ class WebpackObfuscator {
     }
 }
 
-export = WebpackObfuscator
+export = WebpackObfuscator;

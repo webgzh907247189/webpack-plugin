@@ -9,13 +9,12 @@ export = class ErrorWithImportPackage {
     }
     apply(compiler: Compiler) {
         const compilerContext = compiler.context;
-        const errorWithImportPackageList = this.errorWithImportPackageList
+        const errorWithImportPackageList = this.errorWithImportPackageList;
 
-        if(errorWithImportPackageList.length === 0) return
+        if (errorWithImportPackageList.length === 0) return;
 
         compiler.hooks.emit.tapAsync('ErrorWithPackage', (compilation, cb) => {
             compilation.chunks.forEach((chunk) => {
-
                 chunk.getModules().forEach((module) => {
                     // 浅度的 检测引入 npm 包
                     (module?.buildInfo?.fileDependencies ?? []).forEach((filePath: string) => {

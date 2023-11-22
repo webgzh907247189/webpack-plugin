@@ -1,8 +1,8 @@
 ## webpack-plugin-deletesourcemap
 
-### Installation  
-`npm i webpack-plugin-deletesourcemap`
+### Installation
 
+`npm i webpack-plugin-deletesourcemap`
 
 ## Usage
 

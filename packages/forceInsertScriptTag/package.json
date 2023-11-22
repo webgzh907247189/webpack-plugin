@@ -1,19 +1,23 @@
 {
-    "name": "webpack-plugin-errorwithimportpackage",
-    "version": "1.0.6",
-    "description": "webpack plugin errorwithimportpackage",
+    "name": "webpack-plugin-forceinsertscripttag",
+    "version": "1.0.0",
+    "description": "webpack plugin forceinsertscripttag",
     "author": "gzh <18255106634@163.com>",
-    "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/errorWithImportPackage/README.md",
+    "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/forceInsertScriptTag#readme",
     "license": "ISC",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
     "keywords": [
         "webpack",
         "plugin",
-        "errorwithimportpackage",
-        "error",
-        "import",
-        "package"
+        "forceinsertscripttag",
+        "force",
+        "insert",
+        "script"
     ],
-    "main": "dist/index.js",
     "typings": "types/index.d.ts",
     "files": [
         "lib",
@@ -21,10 +25,8 @@
         "types"
     ],
     "peerDependencies": {
+        "html-webpack-plugin": ">=4.0.0",
         "webpack": ">=4.0.0"
-    },
-    "directories": {
-        "lib": "lib"
     },
     "repository": {
         "type": "git",
@@ -35,5 +37,8 @@
     },
     "bugs": {
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
+    },
+    "dependencies": {
+        "html-webpack-plugin": "4.5.2"
     }
 }

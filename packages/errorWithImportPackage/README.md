@@ -1,8 +1,8 @@
 ## webpack-plugin-errorwithimportpackage
 
-### Installation  
-`npm i webpack-plugin-errorwithimportpackage`
+### Installation
 
+`npm i webpack-plugin-errorwithimportpackage`
 
 ## Usage
 
