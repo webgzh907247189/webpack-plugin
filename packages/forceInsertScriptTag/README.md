@@ -1,4 +1,4 @@
-# `forceInsertScriptTag`
+## `forceInsertScriptTag`
 
 1. html-webpack-plugin 的 inject: true， 直接 根据参数 isInsertBody 决定插入到 head 还是 body 里面
 2. 在 head | body 里面根据参数 isShift 决定是 前置插入还是后置插入
