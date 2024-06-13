@@ -25,8 +25,8 @@
         "types"
     ],
     "peerDependencies": {
-        "html-webpack-plugin": ">=4.0.0",
-        "webpack": ">=4.0.0"
+        "webpack": ">=4.0.0",
+        "html-webpack-plugin": ">=5.1.0"
     },
     "repository": {
         "type": "git",
@@ -39,7 +39,6 @@
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
     "dependencies": {
-        "cus-utils": "^1.0.15",
-        "html-webpack-plugin": "4.5.2"
+        "cus-utils": "^1.0.15"
     }
 }
