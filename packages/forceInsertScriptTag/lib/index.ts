@@ -50,12 +50,14 @@ export = class ForceInsertScriptTagPlugin {
     }
 
     apply(compiler: Compiler) {
-        if (!this.options.url && !this.options.innerHTML) {
-            throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 需要配置 静态资源的 url 或者 标签内容  \x1B[0m');
-        }
+        if (!this.options.isLaunchIdeJs) {
+            if (!this.options.url && !this.options.innerHTML) {
+                throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 需要配置 静态资源的 url 或者 标签内容  \x1B[0m');
+            }
 
-        if (this.options.url && this.options.innerHTML) {
-            throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 不可以同时配置 innerHTML 和 url \x1B[0m');
+            if (this.options.url && this.options.innerHTML) {
+                throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 不可以同时配置 innerHTML 和 url \x1B[0m');
+            }
         }
 
         compiler.hooks.compilation.tap('ForceInsertScriptTagPlugin', (compilation) => {
