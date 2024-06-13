@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.4
+
+### Patch Changes
+
+-   change version
+
 ## 1.1.3
 
 ### Patch Changes
