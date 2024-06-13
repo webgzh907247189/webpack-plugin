@@ -14,10 +14,11 @@ import { launchIDEConfig } from 'cus-utils';
  */
 type TypePartForceInsertScript = Record<'isInsertBody' | 'isShift' | 'jsDeferLoad' | 'jsAsyncLoad', boolean>;
 type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
-    url: string;
+    url?: string;
+    innerHTML?: string;
+    isLaunchIdeJs?: boolean;
 };
 type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean };
-type aa = Omit<TypeForceInsertScript, ''>;
 
 type TypeAfterTemplateExecutionData = {
     html: string;

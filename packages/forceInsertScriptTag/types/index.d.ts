@@ -12,7 +12,9 @@ import HtmlWebpackPlugin, { HtmlTagObject } from 'html-webpack-plugin';
  */
 type TypePartForceInsertScript = Record<'isInsertBody' | 'isShift' | 'jsDeferLoad' | 'jsAsyncLoad', boolean>;
 type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
-    url: string;
+    url?: string;
+    innerHTML?: string;
+    isLaunchIdeJs?: boolean;
 };
 type TypeForceInsertScript = TypePartForceInsertScript & {
     url?: string;
