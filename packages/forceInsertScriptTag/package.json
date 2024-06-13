@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-forceinsertscripttag",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "webpack plugin forceinsertscripttag",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/forceInsertScriptTag#readme",
