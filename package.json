@@ -28,7 +28,7 @@
         "lint-fix": "eslint . --ext .ts --fix",
         "prettier": "npx prettier --write .",
         "prepare": "husky install",
-        "build": "pnpm run build -r --parallel",
+        "build": "pnpm run -r --parallel build ",
         "changeset": "changeset && npm run version-packages",
         "version-packages": "changeset version",
         "publish": "changeset publish -r"

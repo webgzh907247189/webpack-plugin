@@ -1,6 +1,6 @@
 import { Compiler } from 'webpack';
 declare const _default: {
-    new (options?: never[]): {
+    new (options?: string[] | string): {
         errorWithImportPackageList: string[];
         apply(compiler: Compiler): void;
     };

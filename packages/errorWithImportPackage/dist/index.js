@@ -34,7 +34,7 @@ module.exports = /** @class */ (function () {
         var errorWithImportPackageList = this.errorWithImportPackageList;
         if (errorWithImportPackageList.length === 0)
             return;
-        compiler.hooks.emit.tapAsync('ErrorWithPackage', function (compilation, cb) {
+        compiler.hooks.emit.tapAsync('ErrorWithImportPackage', function (compilation, cb) {
             compilation.chunks.forEach(function (chunk) {
                 chunk.getModules().forEach(function (module) {
                     var _a, _b;

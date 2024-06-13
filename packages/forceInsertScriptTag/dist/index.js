@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 var html_webpack_plugin_1 = __importDefault(require("html-webpack-plugin"));
+var cus_utils_1 = require("cus-utils");
 module.exports = /** @class */ (function () {
     function ForceInsertScriptTagPlugin(defaultOptions) {
         // 如果 html-webpack-plugin inject 为 false, 只能插入在 body里，不能插入在 head里
@@ -32,8 +33,11 @@ module.exports = /** @class */ (function () {
     }
     ForceInsertScriptTagPlugin.prototype.apply = function (compiler) {
         var _this = this;
-        if (!this.options.url) {
-            throw new Error('使用ForceInsertScriptTagPlugin 需要配置 静态资源的 url');
+        if (!this.options.url && !this.options.innerHTML) {
+            throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 需要配置 静态资源的 url 或者 标签内容  \x1B[0m');
+        }
+        if (this.options.url && this.options.innerHTML) {
+            throw new Error('\x1B[41;30m 使用ForceInsertScriptTagPlugin 不可以同时配置 innerHTML 和 url \x1B[0m');
         }
         compiler.hooks.compilation.tap('ForceInsertScriptTagPlugin', function (compilation) {
             html_webpack_plugin_1.default.getHooks(compilation).afterTemplateExecution.tapAsync('cusPlugin', function (data, cb) {
@@ -44,9 +48,14 @@ module.exports = /** @class */ (function () {
             });
         });
     };
+    ForceInsertScriptTagPlugin.prototype.getInnerHTMLVal = function () {
+        var _a = this.options, innerHTML = _a.innerHTML, isLaunchIdeJs = _a.isLaunchIdeJs;
+        return isLaunchIdeJs ? (0, cus_utils_1.launchIDEConfig)() : innerHTML;
+    };
     ForceInsertScriptTagPlugin.prototype.processTag = function (data) {
         var _a = this.options, url = _a.url, isInsertBody = _a.isInsertBody, isShift = _a.isShift, jsDeferLoad = _a.jsDeferLoad, jsAsyncLoad = _a.jsAsyncLoad;
         var assetsList = isInsertBody ? data.bodyTags : data.headTags;
+        var innerHTMLVal = this.getInnerHTMLVal();
         var insertTag = {
             tagName: 'script',
             voidTag: false,
@@ -55,20 +64,22 @@ module.exports = /** @class */ (function () {
                 async: jsAsyncLoad,
                 src: url,
             },
+            innerHTML: innerHTMLVal,
         };
         if (isShift) {
-            assetsList.push(insertTag);
+            assetsList.unshift(insertTag);
         }
         else {
-            assetsList.unshift(insertTag);
+            assetsList.push(insertTag);
         }
         return data;
     };
     ForceInsertScriptTagPlugin.prototype.forceInsert = function (data) {
-        var _a = this.options, url = _a.url, isInsertBody = _a.isInsertBody, isShift = _a.isShift, jsDeferLoad = _a.jsDeferLoad, jsAsyncLoad = _a.jsAsyncLoad;
-        var strScript = "<script src=\"".concat(url, "\" ").concat(jsDeferLoad ? 'defer' : '', " ").concat(jsAsyncLoad ? 'async' : '', " type=\"text/javascript\"></script>");
+        var innerHTMLVal = this.getInnerHTMLVal();
+        var _a = this.options, url = _a.url, isShift = _a.isShift, jsDeferLoad = _a.jsDeferLoad, jsAsyncLoad = _a.jsAsyncLoad;
+        var strScript = "<script ".concat(url ? "src=\"".concat(url, "\"") : '', " ").concat(jsDeferLoad ? 'defer' : '', " ").concat(jsAsyncLoad ? 'async' : '', " type=\"text/javascript\">\n            ").concat(innerHTMLVal ? innerHTMLVal : '', "\n        </script>");
         var html = data.html;
-        var insertBegExp = isShift ? /(<\/body\s*>)/i : /(<body[^>]*>)/i;
+        var insertBegExp = isShift ? /(<body[^>]*>)/i : /(<\/body\s*>)/i;
         var cb = isShift ? function (match) { return strScript + match; } : function (match) { return match + strScript; };
         if (insertBegExp.test(html)) {
             html = html.replace(insertBegExp, cb);

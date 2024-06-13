@@ -15,7 +15,9 @@ type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
     url: string;
 };
 type TypeForceInsertScript = TypePartForceInsertScript & {
-    url: string;
+    url?: string;
+    innerHTML?: string;
+    isLaunchIdeJs?: boolean;
 };
 type TypeAfterTemplateExecutionData = {
     html: string;
@@ -30,6 +32,7 @@ declare const _default: {
         options: TypeForceInsertScript;
         defaultOptions: TypeDefaultForceInsertScript;
         apply(compiler: Compiler): void;
+        getInnerHTMLVal(): string | undefined;
         processTag(data: TypeAfterTemplateExecutionData): TypeAfterTemplateExecutionData;
         forceInsert(data: TypeAfterTemplateExecutionData): TypeAfterTemplateExecutionData;
     };
