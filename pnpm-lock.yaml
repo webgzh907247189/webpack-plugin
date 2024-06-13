@@ -58,8 +58,8 @@ importers:
   packages/forceInsertScriptTag:
     dependencies:
       cus-utils:
-        specifier: ^1.0.14
-        version: 1.0.14
+        specifier: ^1.0.15
+        version: 1.0.15
       html-webpack-plugin:
         specifier: 4.5.2
         version: 4.5.2(webpack@5.89.0)
@@ -1285,8 +1285,8 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
-  /cus-utils@1.0.14:
-    resolution: {integrity: sha512-Pe36p8DViPHmkj0aEGoIQfmyoPonU8tOU2+jWj65YCGDuDd18+csMZwETV2rydSdLgWYrJxg4RpGV08RD8e12A==}
+  /cus-utils@1.0.15:
+    resolution: {integrity: sha512-ULGnYxgjp337/mF8MEhKuFYf7o8zbxZvSFTKA1Tp6pcqUFrZ61Q1NEyC4Xe+rKkqNBq272fHfE6Q6Y/ffzy8kA==}
     dependencies:
       core-js: 3.37.1
     dev: false

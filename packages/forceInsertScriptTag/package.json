@@ -39,7 +39,7 @@
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
     "dependencies": {
-        "cus-utils": "^1.0.14",
+        "cus-utils": "^1.0.15",
         "html-webpack-plugin": "4.5.2"
     }
 }
