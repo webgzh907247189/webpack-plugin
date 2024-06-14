@@ -17,8 +17,9 @@ type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
     url?: string;
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
+    ideName?: string;
 };
-type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean };
+type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string };
 
 type TypeAfterTemplateExecutionData = {
     html: string;
@@ -72,8 +73,8 @@ export = class ForceInsertScriptTagPlugin {
         });
     }
     getInnerHTMLVal() {
-        const { innerHTML, isLaunchIdeJs } = this.options;
-        return isLaunchIdeJs ? launchIDEConfig() : innerHTML;
+        const { innerHTML, isLaunchIdeJs, ideName } = this.options;
+        return isLaunchIdeJs ? launchIDEConfig(ideName) : innerHTML;
     }
 
     processTag(data: TypeAfterTemplateExecutionData) {
@@ -93,9 +94,9 @@ export = class ForceInsertScriptTagPlugin {
             innerHTML: innerHTMLVal,
         };
         if (isShift) {
-            assetsList.unshift(insertTag as HtmlTagObject);
+            assetsList.unshift(insertTag as unknown as HtmlTagObject);
         } else {
-            assetsList.push(insertTag as HtmlTagObject);
+            assetsList.push(insertTag as unknown as HtmlTagObject);
         }
         return data;
     }
