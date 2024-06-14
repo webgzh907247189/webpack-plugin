@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.6
+
+### Patch Changes
+
+-   update cus-utils version
+
 ## 1.1.5
 
 ### Patch Changes
