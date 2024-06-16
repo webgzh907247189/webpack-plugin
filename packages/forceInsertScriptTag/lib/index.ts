@@ -73,7 +73,7 @@ export = class ForceInsertScriptTagPlugin {
         });
     }
     getInnerHTMLVal() {
-        const { innerHTML, isLaunchIdeJs, ideName } = this.options;
+        const { innerHTML, isLaunchIdeJs, ideName = 'vscode' } = this.options;
         return isLaunchIdeJs ? launchIDEConfig(ideName) : innerHTML;
     }
 
