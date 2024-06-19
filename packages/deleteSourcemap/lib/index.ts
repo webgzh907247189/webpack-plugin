@@ -20,10 +20,10 @@ export = class DeleteSourcemap {
                 .forEach((item) => {
                     const sourcePath = path.join(stats.compilation.compiler.outputPath, item);
                     if (sourcePath) {
-                        try{
+                        try {
                             fs.unlinkSync(sourcePath);
-                        }catch{
-                            console.warn('DeleteSourcemap no such file or directory, unlink ----->', sourcePath)
+                        } catch {
+                            console.warn('DeleteSourcemap no such file or directory, unlink ----->', sourcePath);
                         }
                     }
                 });

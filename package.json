@@ -26,7 +26,7 @@
     },
     "scripts": {
         "lint-fix": "eslint . --ext .ts --fix",
-        "prettier": "npx prettier --write .",
+        "prettier": "npx prettier --write packages/**/*.{ts,js}",
         "prepare": "husky install",
         "build": "pnpm run -r --parallel build ",
         "changeset": "changeset && npm run version-packages",

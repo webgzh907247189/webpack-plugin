@@ -23,8 +23,8 @@ type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHT
 
 type TypeAfterTemplateExecutionData = {
     html: string;
-    headTags: HtmlTagObject[];
-    bodyTags: HtmlTagObject[];
+    headTags: HtmlTagObject[]
+    bodyTags: HtmlTagObject[]
     outputName: string;
     plugin: HtmlWebpackPlugin;
 };
