@@ -22,11 +22,11 @@ type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
 type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string };
 
 type TypeAfterTemplateExecutionData = {
-    html: string
-    headTags: HtmlTagObject[]
-    bodyTags: HtmlTagObject[]
+    html: string;
+    headTags: HtmlTagObject[];
+    bodyTags: HtmlTagObject[];
     outputName: string;
-    plugin: HtmlWebpackPlugin
+    plugin: HtmlWebpackPlugin;
 };
 
 export = class ForceInsertScriptTagPlugin {
