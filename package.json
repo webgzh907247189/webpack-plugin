@@ -31,7 +31,8 @@
         "build": "pnpm run -r --parallel build ",
         "changeset": "changeset && npm run version-packages",
         "version-packages": "changeset version",
-        "publish": "changeset publish -r"
+        "publish": "changeset publish -r",
+        "preinstall": "npx limit-package-install pnpm"
     },
     "husky": {
         "hooks": {
