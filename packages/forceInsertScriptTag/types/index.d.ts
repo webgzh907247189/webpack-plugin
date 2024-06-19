@@ -8,7 +8,7 @@ import HtmlWebpackPlugin, { HtmlTagObject } from 'html-webpack-plugin';
  *
  *
  * 如果 html-webpack-plugin 的 inject: false，只会插入在body 里面，但是可以根据参数 isShift 决定是 在body进行 前置插入还是后置插入
- * nuxt2 ssr 模式  html-webpack-plugin 的 inject 是 false， 会触发上述情况
+ * nuxt2 ssr 模式  html-webpack-plugin 的 inject 是 false, 会触发上述情况
  */
 type TypePartForceInsertScript = Record<'isInsertBody' | 'isShift' | 'jsDeferLoad' | 'jsAsyncLoad', boolean>;
 type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
