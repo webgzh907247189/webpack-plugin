@@ -25,7 +25,7 @@
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
     "scripts": {
-        "lint-fix": "eslint . --ext .ts --fix",
+        "lint-fix": "eslint packages --ext .ts,.js --fix",
         "prettier": "npx prettier --write packages/**/*.{ts,js}",
         "prepare": "husky install",
         "build": "pnpm run -r --parallel build ",
@@ -33,8 +33,13 @@
         "version-packages": "changeset version",
         "publish": "changeset publish -r"
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
     "lint-staged": {
-        "src/**/*.{js,ts,tsx,vue}": [
+        "packages/**/*.{js,ts}": [
             "npm run prettier",
             "npm run lint-fix"
         ]
