@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.13
+
+### Patch Changes
+
+-   fix bug for vconsole
+
 ## 1.1.12
 
 ### Patch Changes
