@@ -1,9 +1,9 @@
 {
-    "name": "webpack-plugin-forceinsertscripttag",
-    "version": "1.1.14",
-    "description": "webpack plugin forceinsertscripttag",
+    "name": "webpack-plugin-addscriptforhtmlplugin",
+    "version": "1.0.0",
+    "description": "webpack plugin addscriptforhtmlplugin",
     "author": "gzh <18255106634@163.com>",
-    "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/forceInsertScriptTag#readme",
+    "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/addScriptForHtmlPlugin#readme",
     "license": "ISC",
     "main": "dist/index.js",
     "directories": {
@@ -13,10 +13,10 @@
     "keywords": [
         "webpack",
         "plugin",
-        "forceinsertscripttag",
-        "force",
-        "insert",
-        "script"
+        "addscriptforhtmlplugin",
+        "add script",
+        "script",
+        "add script for html"
     ],
     "typings": "types/index.d.ts",
     "files": [
@@ -25,7 +25,6 @@
         "types"
     ],
     "peerDependencies": {
-        "html-webpack-plugin": ">=5.1.0",
         "webpack": ">=4.0.0"
     },
     "repository": {
@@ -39,6 +38,8 @@
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
     "devDependencies": {
-        "cus-utils": "^1.1.4"
+        "@types/webpack-sources": "^3.2.3",
+        "cus-utils": "^1.1.4",
+        "webpack-sources": "^3.2.3"
     }
 }
