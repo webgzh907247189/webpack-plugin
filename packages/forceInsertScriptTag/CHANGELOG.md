@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.15
+
+### Patch Changes
+
+-   fix bug for validate
+
 ## 1.1.14
 
 ### Patch Changes
