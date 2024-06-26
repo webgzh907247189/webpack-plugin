@@ -40,13 +40,17 @@ importers:
         version: 5.89.0(webpack-cli@5.1.4)
 
   packages/addScriptForHtmlPlugin:
+    dependencies:
+      cus-utils:
+        specifier: ^1.1.5
+        version: 1.1.5
+      webpack:
+        specifier: '>=4.0.0'
+        version: 5.89.0(webpack-cli@5.1.4)
     devDependencies:
       '@types/webpack-sources':
         specifier: ^3.2.3
         version: 3.2.3
-      cus-utils:
-        specifier: ^1.1.4
-        version: 1.1.4
       webpack-sources:
         specifier: ^3.2.3
         version: 3.2.3
@@ -69,16 +73,15 @@ importers:
 
   packages/forceInsertScriptTag:
     dependencies:
+      cus-utils:
+        specifier: ^1.1.5
+        version: 1.1.5
       html-webpack-plugin:
         specifier: '>=5.1.0'
         version: 5.6.0(webpack@5.89.0)
       webpack:
         specifier: '>=4.0.0'
         version: 5.89.0(webpack-cli@5.1.4)
-    devDependencies:
-      cus-utils:
-        specifier: ^1.1.4
-        version: 1.1.4
 
   packages/obfuscator:
     dependencies:
@@ -1193,7 +1196,7 @@ packages:
   /core-js@3.37.1:
     resolution: {integrity: sha512-Xn6qmxrQZyB0FFY8E3bgRXei3lWDJHhvI+u0q9TKIYM49G8pAr0FgnnrFRAmsbptZL1yxRADVXn+x5AGsbBfyw==}
     requiresBuild: true
-    dev: true
+    dev: false
 
   /cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
@@ -1252,11 +1255,11 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
-  /cus-utils@1.1.4:
-    resolution: {integrity: sha512-6Qg2CR1LeC4S0fGUcpNkM55zPyAJatarbPv1Pl9xESL+bTaGeGZjURIGdxqoHd5Mh9XSs9cKK/XpYjsi+rOT0Q==}
+  /cus-utils@1.1.5:
+    resolution: {integrity: sha512-umzNJW1zONMJ1EcaHVoH/jqLqpUd7k+cYBy5/8H3owbmGv0S1N4C7hkUyWQ6lo5LBJ64rmfY4wTaqq8IrDtNAg==}
     dependencies:
       core-js: 3.37.1
-    dev: true
+    dev: false
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}

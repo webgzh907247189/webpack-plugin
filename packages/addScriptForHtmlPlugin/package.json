@@ -39,7 +39,9 @@
     },
     "devDependencies": {
         "@types/webpack-sources": "^3.2.3",
-        "cus-utils": "^1.1.4",
         "webpack-sources": "^3.2.3"
+    },
+    "dependencies": {
+        "cus-utils": "^1.1.5"
     }
 }

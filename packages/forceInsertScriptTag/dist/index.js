@@ -62,8 +62,8 @@ module.exports = /** @class */ (function () {
         });
     };
     ForceInsertScriptTagPlugin.prototype.getInnerHTMLVal = function () {
-        var _a = this.options, innerHTML = _a.innerHTML, isLaunchIdeJs = _a.isLaunchIdeJs, _b = _a.ideName, ideName = _b === void 0 ? 'vscode' : _b;
-        return isLaunchIdeJs ? (0, cus_utils_1.launchIDEConfig)(ideName) : innerHTML;
+        var _a = this.options, innerHTML = _a.innerHTML, isLaunchIdeJs = _a.isLaunchIdeJs, _b = _a.ideName, ideName = _b === void 0 ? 'vscode' : _b, userGetUrl = _a.userGetUrl;
+        return isLaunchIdeJs ? (0, cus_utils_1.launchIDEConfig)(ideName, userGetUrl) : innerHTML;
     };
     ForceInsertScriptTagPlugin.prototype.processTag = function (data) {
         var _a = this.options, url = _a.url, isInsertBody = _a.isInsertBody, isShift = _a.isShift, jsDeferLoad = _a.jsDeferLoad, jsAsyncLoad = _a.jsAsyncLoad;

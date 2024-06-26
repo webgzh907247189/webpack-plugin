@@ -16,12 +16,14 @@ type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
 type TypeForceInsertScript = TypePartForceInsertScript & {
     url?: string;
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
 type TypeAfterTemplateExecutionData = {
     html: string;

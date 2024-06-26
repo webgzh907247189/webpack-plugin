@@ -16,8 +16,9 @@ type TypeDefaultAddScript = Partial<TypePartAddScript> & {
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
-type TypeForceInsertScript = TypePartAddScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string };
+type TypeForceInsertScript = TypePartAddScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string; userGetUrl?: (url: string) => string };
 
 export = class ForceInsertScriptTagPlugin {
     public defaultPluginOptions: TypePartAddScript = {
@@ -105,7 +106,7 @@ export = class ForceInsertScriptTagPlugin {
         return html;
     }
     getInsertScriptVal() {
-        const { innerHTML, isLaunchIdeJs, ideName = 'vscode' } = this.options;
-        return isLaunchIdeJs ? launchIDEConfig(ideName) : innerHTML;
+        const { innerHTML, isLaunchIdeJs, ideName = 'vscode', userGetUrl } = this.options;
+        return isLaunchIdeJs ? launchIDEConfig(ideName, userGetUrl) : innerHTML;
     }
 };

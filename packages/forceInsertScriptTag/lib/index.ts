@@ -19,8 +19,9 @@ type TypeDefaultForceInsertScript = Partial<TypePartForceInsertScript> & {
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
-type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string };
+type TypeForceInsertScript = TypePartForceInsertScript & { url?: string; innerHTML?: string; isLaunchIdeJs?: boolean; ideName?: string; userGetUrl?: (url: string) => string };
 
 type TypeAfterTemplateExecutionData = {
     html: string;
@@ -86,8 +87,8 @@ export = class ForceInsertScriptTagPlugin {
         });
     }
     getInnerHTMLVal() {
-        const { innerHTML, isLaunchIdeJs, ideName = 'vscode' } = this.options;
-        return isLaunchIdeJs ? launchIDEConfig(ideName) : innerHTML;
+        const { innerHTML, isLaunchIdeJs, ideName = 'vscode', userGetUrl } = this.options;
+        return isLaunchIdeJs ? launchIDEConfig(ideName, userGetUrl) : innerHTML;
     }
 
     processTag(data: TypeAfterTemplateExecutionData) {

@@ -38,7 +38,7 @@
     "bugs": {
         "url": "https://github.com/webgzh907247189/webpack-plugin/issues"
     },
-    "devDependencies": {
-        "cus-utils": "^1.1.4"
+    "dependencies": {
+        "cus-utils": "^1.1.5"
     }
 }

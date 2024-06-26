@@ -12,12 +12,14 @@ type TypeDefaultAddScript = Partial<TypePartAddScript> & {
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
 type TypeForceInsertScript = TypePartAddScript & {
     url?: string;
     innerHTML?: string;
     isLaunchIdeJs?: boolean;
     ideName?: string;
+    userGetUrl?: (url: string) => string;
 };
 declare const _default: {
     new (defaultOptions: TypeDefaultAddScript): {
