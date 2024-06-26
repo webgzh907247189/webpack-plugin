@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.16
+
+### Patch Changes
+
+-   change new version for launch webstorm ide
+
 ## 1.1.15
 
 ### Patch Changes
