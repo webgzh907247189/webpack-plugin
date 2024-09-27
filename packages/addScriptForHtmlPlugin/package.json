@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-addscriptforhtmlplugin",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "webpack plugin addscriptforhtmlplugin",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/tree/main/packages/addScriptForHtmlPlugin#readme",
@@ -42,6 +42,6 @@
         "webpack-sources": "^3.2.3"
     },
     "dependencies": {
-        "cus-utils": "^1.1.5"
+        "cus-utils": "^1.2.0"
     }
 }

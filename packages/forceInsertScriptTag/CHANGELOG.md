@@ -1,5 +1,11 @@
 # webpack-plugin-forceinsertscripttag
 
+## 1.1.17
+
+### Patch Changes
+
+-   change launch ide
+
 ## 1.1.16
 
 ### Patch Changes
