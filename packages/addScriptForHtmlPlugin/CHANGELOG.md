@@ -1,5 +1,11 @@
 # webpack-plugin-addscriptforhtmlplugin
 
+## 1.0.5
+
+### Patch Changes
+
+-   change new version
+
 ## 1.0.4
 
 ### Patch Changes
