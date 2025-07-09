@@ -28,28 +28,34 @@ export = class DeleteCompilerBundle {
                 return;
             }
 
-            this.options.deleteFolderList.forEach((folder) => {
-                const folderPath = path.join(stats.compilation.compiler.outputPath, folder);
+            this.options.deleteFolderList.forEach((itemFolder) => {
+                const folderPath = path.join(stats.compilation.compiler.outputPath, itemFolder);
 
-                // 判断是不是文件夹
-                const fileStats = fs.statSync(folderPath);
+                const isExits = fs.existsSync(folderPath);
+                if (isExits) {
+                    // 判断是不是文件夹
+                    const fileStats = fs.statSync(folderPath);
 
-                // 文件夹删除
-                if (fileStats.isDirectory()) {
-                    if (fs.existsSync(folderPath)) {
-                        try {
-                            fs.rmSync(folderPath, { recursive: true, force: true });
-                        } catch (error) {
-                            console.warn('删除文件夹失败 ----->', folderPath);
+                    // 文件夹删除
+                    if (fileStats.isDirectory()) {
+                        if (fs.existsSync(folderPath)) {
+                            try {
+                                fs.rmSync(folderPath, { recursive: true, force: true });
+
+                                console.log(`\x1b[42;30m  删除文件夹成功: ${folderPath} \x1b[0m`);
+                            } catch (error) {
+                                console.log(`\x1b[41;30m 删除文件夹失败 ----> ${folderPath}  \x1b[0m`);
+                            }
                         }
-                    }
-                } else {
-                    // 文件删除
-                    const sourcePath = path.join(stats.compilation.compiler.outputPath, folder);
-                    try {
-                        fs.unlinkSync(sourcePath);
-                    } catch {
-                        console.warn('删除文件失败 ----->', sourcePath);
+                    } else {
+                        // 文件删除
+                        const sourcePath = path.join(stats.compilation.compiler.outputPath, itemFolder);
+                        try {
+                            fs.unlinkSync(sourcePath);
+                            console.log(`\x1b[42;30m  删除文件夹成功: ${sourcePath} \x1b[0m`);
+                        } catch {
+                            console.log(`\x1b[41;30m 删除文件失败 ----> ${sourcePath}  \x1b[0m`);
+                        }
                     }
                 }
             });
