@@ -1,6 +1,6 @@
 {
     "name": "webpack-plugin-deletecompilerbundle",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "webpack plugin delete compiler bundle",
     "author": "gzh <18255106634@163.com>",
     "homepage": "https://github.com/webgzh907247189/webpack-plugin/blob/master/packages/deleteCompilerBundle/README.md",
